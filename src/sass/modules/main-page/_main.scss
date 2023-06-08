@@ -1,2 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+.text-column{
+    width: 300px;
+}
+
+
+.color-red{
+    color: red;
+}
+
+.color-blue{
+    color: blue;
+}
+
+.color-green{
+    color: green;
+}
+
+.task-width{
+    width: 30vw;
+    
+    .task{
+        height: 50px;
+        width: 100%;
+        background-color: lightgray;
+        margin: .5rem 0;
+    }
+}
 
