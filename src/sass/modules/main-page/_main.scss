@@ -4,9 +4,27 @@
     box-sizing: border-box;
 }
 
+/*--------------------------------*/
+
 .text-column{
     width: 300px;
 }
+
+
+.task-width{
+    width: 450px;
+}
+
+.task{
+    // height: 50px;
+    width: 100%;
+    background-color: lightgray;
+    margin: .5rem 0;
+}
+
+// .sizing {
+//     font-size: 1.5rem;
+// }
 
 // ----- colors -----
 .color-red{
@@ -23,14 +41,6 @@
 
 // -------------
 
-.task-width{
-    width: 30vw;
-    
-    .task{
-        height: 50px;
-        width: 100%;
-        background-color: lightgray;
-        margin: .5rem 0;
-    }
+.bg-green{
+    background-color: greenyellow;
 }
-

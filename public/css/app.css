@@ -11865,8 +11865,19 @@ textarea.form-control-lg {
   box-sizing: border-box;
 }
 
+/*--------------------------------*/
 .text-column {
   width: 300px;
+}
+
+.task-width {
+  width: 450px;
+}
+
+.task {
+  width: 100%;
+  background-color: lightgray;
+  margin: 0.5rem 0;
 }
 
 .color-red {
@@ -11881,14 +11892,8 @@ textarea.form-control-lg {
   color: green;
 }
 
-.task-width {
-  width: 30vw;
-}
-.task-width .task {
-  height: 50px;
-  width: 100%;
-  background-color: lightgray;
-  margin: 0.5rem 0;
+.bg-green {
+  background-color: greenyellow;
 }
 
 /*# sourceMappingURL=app.css.map */
