@@ -142,9 +142,9 @@ function addTask(btn) {
   divButton.appendChild(btnUp);
   btnUp.appendChild(upIcon);
   // create content of button
-  let taskText = prompt("Saisir ton task ici:");
+  let taskText = prompt("Entrez ton task ici:");
   while (taskText.length == 0) {
-    taskText = prompt("Saisir ton task ici:");
+    taskText = prompt("Entrez ton task ici:");
   }
   p.textContent = taskText;
 }
@@ -163,7 +163,7 @@ function done(doneBtn) {
 
 //task modify function
 function modify(modifyBtn) {
-  let newTask = prompt("Ajouter ton modification ici?");
+  let newTask = prompt("Ajoutez ton modification ici?");
   let p = modifyBtn.parentElement.parentElement.parentElement.firstChild;
   p.textContent = newTask;
 }
@@ -171,7 +171,6 @@ function modify(modifyBtn) {
 // drag and drop event
 function draggEvent() {
   let dropzone = document.querySelectorAll(".dropzone");
-  console.log(dropzone);
   dropzone.forEach((zone) => {
     zone.addEventListener("dragstart", dragStart);
     zone.addEventListener("dragover", dragOver);
@@ -211,7 +210,6 @@ function goDown(target){
   let taskDiv = target.parentElement.parentElement.parentElement;
   if(taskDiv.nextElementSibling != null){
       if(taskDiv.nextElementSibling.className.includes("step")){
-          console.log('Yes the next ele is target box');
           parentDiv.insertBefore(taskDiv, taskDiv.nextElementSibling.nextElementSibling);
       }
   } 
