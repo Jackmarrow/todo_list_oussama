@@ -38,6 +38,10 @@ document.addEventListener("click", (e) => {
   if (e.target.className.includes("task-down")){
     goDown(e.target);
   }
+  //delete the column
+  if(e.target.className.includes("close-btn")){
+    deleteColumn(e.target);
+  }
 });
 
 //!------------------------------------------------------------------
@@ -49,21 +53,27 @@ function addDiv(e) {
     //create tags for the column
     let div = document.createElement("div");
     let button = document.createElement("button");
+    let closeButton = document.createElement("button");
+    let closeIcon = document.createElement("i");
     let h1 = document.createElement("h1");
     //add class to tags
     div.setAttribute(
       "class",
-      "bg-danger h-100 task-width rounded-3 d-flex flex-column align-items-center mx-1 p-4 dropzone"
+      "bg-danger h-100 position-relative task-width rounded-3 d-flex flex-column align-items-center mx-1 p-4 dropzone"
     );
     button.setAttribute("class", "btn btn-primary mb-4 add-task");
+    closeButton.setAttribute("class", "btn btn-primary close-btn");
+    closeIcon.setAttribute("class", "fa-solid fa-xmark fa-1x");
     h1.setAttribute("class", "text-white mb-4");
     //add text to the button and title
     h1.innerHTML = inputTitle.value;
     button.innerHTML = "Ajouter un task";
     //appendChild to the column
     columnContainer.appendChild(div);
+    div.appendChild(closeButton);
     div.appendChild(h1);
     div.appendChild(button);
+    closeButton.appendChild(closeIcon);
     //reset the input value
     inputTitle.value = "";
     //call the drag event listener
@@ -205,4 +215,10 @@ function goDown(target){
           parentDiv.insertBefore(taskDiv, taskDiv.nextElementSibling.nextElementSibling);
       }
   } 
+}
+
+// delete column 
+function deleteColumn(target){
+  let parentDiv = target.parentElement;
+  parentDiv.remove();
 }
