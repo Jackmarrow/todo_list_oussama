@@ -12,23 +12,22 @@
 
 
 .task-width{
-    width: 450px;
+    min-width: 400px;
 }
 
+
 .task{
-    // height: 50px;
     width: 100%;
     background-color: lightgray;
     margin: .5rem 0;
 }
-
 // .sizing {
-//     font-size: 1.5rem;
-// }
-
+    //     font-size: 1.5rem;
+    // }
+    
 // ----- colors -----
-.color-red{
-    color: red;
+    .color-red{
+        color: red;
 }
 
 .color-blue{

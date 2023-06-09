@@ -11871,7 +11871,7 @@ textarea.form-control-lg {
 }
 
 .task-width {
-  width: 450px;
+  min-width: 400px;
 }
 
 .task {
