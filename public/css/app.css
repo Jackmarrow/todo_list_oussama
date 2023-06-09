@@ -11931,5 +11931,8 @@ body {
 .bg-green {
   background-color: greenyellow;
 }
+.bg-green p {
+  text-decoration: line-through;
+}
 
 /*# sourceMappingURL=app.css.map */
