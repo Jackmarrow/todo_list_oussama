@@ -6,17 +6,20 @@
 
 body{
     background-image: url("../../../../public/images/fond-ecran.jpg");
-    // background-size: cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /*--------------------------------*/
+.content{
+    height: 30vh;
+}
 
 .text-column{
     width: 300px;
 }
-
 
 .task-width{
     min-width: 450px;
@@ -31,11 +34,11 @@ body{
 }
 
 .sizing {
-        font-size: 1.4rem;
+    font-size: 1.4rem;
 }
     
 // ----- colors -----
-    .color-red{
+.color-red{
         color: red;
 }
 

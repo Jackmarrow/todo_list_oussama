@@ -53,7 +53,7 @@ function addDiv(e) {
     //add class to tags
     div.setAttribute(
       "class",
-      "bg-danger h-100 task-width rounded-3 d-flex flex-column align-items-center ms-4 me-4 p-4 dropzone"
+      "bg-danger h-100 task-width rounded-3 d-flex flex-column align-items-center mx-1 p-4 dropzone"
     );
     button.setAttribute("class", "btn btn-primary mb-4 add-task");
     h1.setAttribute("class", "text-white mb-4");

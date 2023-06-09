@@ -11867,11 +11867,17 @@ textarea.form-control-lg {
 
 body {
   background-image: url("../../../../public/images/fond-ecran.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /*--------------------------------*/
+.content {
+  height: 30vh;
+}
+
 .text-column {
   width: 300px;
 }
