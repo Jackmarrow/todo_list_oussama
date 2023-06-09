@@ -30,6 +30,14 @@ document.addEventListener("click", (e) => {
   if (e.target.className.includes("modify")) {
     modify(e.target);
   }
+  //take a task up
+  if (e.target.className.includes("task-up")){
+    goUp(e.target);
+  }
+  //take a task down
+  if (e.target.className.includes("task-down")){
+    goDown(e.target);
+  }
 });
 
 //!------------------------------------------------------------------
@@ -73,13 +81,17 @@ function addTask(btn) {
   let btnModifie = document.createElement("button");
   let btnDelete = document.createElement("button");
   let btnDone = document.createElement("button");
+  let btnUp = document.createElement("button");
+  let btnDown = document.createElement("button");
   let modifieIcon = document.createElement("i");
   let deleteIcon = document.createElement("i");
   let doneIcon = document.createElement("i");
+  let upIcon = document.createElement("i"); 
+  let downIcon = document.createElement("i"); 
   //add class to tags
   divTask.setAttribute(
     "class",
-    "d-flex align-items-center justify-content-between task rounded-3 p-2"
+    "d-flex align-items-center justify-content-between step rounded-3 p-2"
   );
   divTask.setAttribute("draggable", "true");
   divButton.setAttribute("class", "d-flex align-content-center");
@@ -87,11 +99,15 @@ function addTask(btn) {
   btnDelete.setAttribute("class", "mx-1 bg-transparent border-0 color-red");
   btnDone.setAttribute(
     "class",
-    "mx-1 p-1 rounded-2 border-0 bg-success text-white"
+    "mx-1 px-1 rounded-2 border-0 bg-success text-white"
   );
-  modifieIcon.setAttribute("class", "fa-solid fa-pencil fa-2x modify");
-  deleteIcon.setAttribute("class", "fa-solid fa-trash fa-2x delete");
-  doneIcon.setAttribute("class", "fa-solid fa-check text-white px-1 done");
+  btnUp.setAttribute("class", "mx-1 bg-transparent border-0");
+  btnDown.setAttribute("class", "mx-1 bg-transparent border-0");
+  modifieIcon.setAttribute("class", "fa-solid fa-pencil fa-2x modify sizing");
+  deleteIcon.setAttribute("class", "fa-solid fa-trash fa-2x delete sizing");
+  doneIcon.setAttribute("class", "fa-solid fa-check text-white done sizing");
+  downIcon.setAttribute("class", "fa-solid fa-arrow-down task-down sizing");
+  upIcon.setAttribute("class", "fa-solid fa-arrow-up task-up sizing");
   p.setAttribute("class", "fs-5 mb-0");
   //append child to the column
   //^ add div task to the column
@@ -109,6 +125,12 @@ function addTask(btn) {
   //^ add btn done to div buttons
   divButton.appendChild(btnDone);
   btnDone.appendChild(doneIcon);
+  //^ add btn down for task
+  divButton.appendChild(btnDown);
+  btnDown.appendChild(downIcon);
+  //^ add btn up for task
+  divButton.appendChild(btnUp);
+  btnUp.appendChild(upIcon);
   // create content of button
   let taskText = prompt("Saisir ton task ici:");
   while (taskText.length == 0) {
@@ -136,7 +158,7 @@ function modify(modifyBtn) {
   p.textContent = newTask;
 }
 
-//
+// drag and drop event
 function draggEvent() {
   let dropzone = document.querySelectorAll(".dropzone");
   console.log(dropzone);
@@ -160,4 +182,27 @@ function draggEvent() {
   function drop(e) {
     e.target.appendChild(dragged);
   }
+}
+
+//go task up
+function goUp(target){
+  let parentDiv = target.parentElement.parentElement.parentElement.parentElement;
+  let taskDiv = target.parentElement.parentElement.parentElement;
+  if(taskDiv.previousElementSibling != null){
+      if(taskDiv.previousElementSibling.className.includes("step")){
+          parentDiv.insertBefore(taskDiv, taskDiv.previousElementSibling);
+      }
+  }
+}
+
+//go task down
+function goDown(target){
+  let parentDiv = target.parentElement.parentElement.parentElement.parentElement;
+  let taskDiv = target.parentElement.parentElement.parentElement;
+  if(taskDiv.nextElementSibling != null){
+      if(taskDiv.nextElementSibling.className.includes("step")){
+          console.log('Yes the next ele is target box');
+          parentDiv.insertBefore(taskDiv, taskDiv.nextElementSibling.nextElementSibling);
+      }
+  } 
 }

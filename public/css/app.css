@@ -11865,19 +11865,29 @@ textarea.form-control-lg {
   box-sizing: border-box;
 }
 
+body {
+  background-image: url("../../../../public/images/fond-ecran.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /*--------------------------------*/
 .text-column {
   width: 300px;
 }
 
 .task-width {
-  min-width: 400px;
+  min-width: 450px;
 }
 
-.task {
+.step {
   width: 100%;
   background-color: lightgray;
   margin: 0.5rem 0;
+}
+
+.sizing {
+  font-size: 1.4rem;
 }
 
 .color-red {
